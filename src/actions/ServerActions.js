@@ -14,7 +14,7 @@ const ServerActions = {
       type: 'QUOTE',
       payload: { data }
     })
-    console.log('data:', data)
+    // console.log('data:', data)
   }
 }
 

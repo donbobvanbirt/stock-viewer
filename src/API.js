@@ -16,7 +16,7 @@ const API = {
     jsonp(`http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=${stock}`, (err, data) => {
 
       console.log('err:', err)
-      console.log('data:', data)
+      // console.log('data:', data)
       ServerActions.recieveQuote(data);
 
     })

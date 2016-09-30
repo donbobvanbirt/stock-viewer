@@ -11,7 +11,7 @@ export default class StockResults extends Component {
       searchResults: MarketStore.getStock()
     }
     this._onChange = this._onChange.bind(this);
-    console.log('state:', this.state);
+    // console.log('state:', this.state);
   }
 
   componentWillMount() {
@@ -26,7 +26,7 @@ export default class StockResults extends Component {
     this.setState({
       searchResults: MarketStore.getStock()
     })
-    console.log('state:', this.state);
+    // console.log('state:', this.state);
   }
 
   render() {

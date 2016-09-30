@@ -12,7 +12,7 @@ export default class DetailedView extends Component {
       stock: MarketStore.getQuote()
     }
     this._onChange = this._onChange.bind(this);
-    console.log('state:', this.state);
+    // console.log('state:', this.state);
   }
 
   componentWillMount() {
@@ -27,7 +27,7 @@ export default class DetailedView extends Component {
     this.setState({
       stock: MarketStore.getQuote()
     })
-    console.log('state:', this.state);
+    // console.log('state:', this.state);
   }
 
   getStock(stock) {

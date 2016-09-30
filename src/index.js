@@ -3,7 +3,6 @@ import { render } from 'react-dom'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import Layout from './components/Layout'
-import Home from './components/Home'
 import Info from './components/Info'
 import DetailedView from './components/DetailedView'
 
