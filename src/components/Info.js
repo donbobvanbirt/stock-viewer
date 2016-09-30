@@ -30,8 +30,8 @@ export default class Info extends Component {
     return (
       <div className="form-group">
         <form>
-          <input type="text" className="form-control" ref='searchBar' id='searchBar'/>
-          <button onClick={this.getInfo} className="btn btn-default">Info</button>
+          <input type="text" className="form-control" ref='searchBar' id='searchBar' required/>
+          <button onClick={this.getInfo} className="btn btn-default">Find Stocks</button>
         </form>
         <StockResults getStock={this.getStock}/>
       </div>

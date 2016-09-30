@@ -11,8 +11,8 @@ export default class Layout extends Component {
   render() {
     return (
       <div className='container'>
-        <h1 className='text-center'>Stock Viewer</h1>
         <NavLink className="btn btn-default" to="/" onlyActiveOnIndex={true}>Search</NavLink>
+        <h1 className='text-center'>Stock Viewer</h1>
         {this.props.children}
       </div>
     )

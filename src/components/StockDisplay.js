@@ -37,12 +37,13 @@ const StockDisplay = props => {
           </tr>
           <tr>
             <td></td>
-            <td>Low: {numeral(Open).format('$0,0.00')}</td>
+            <td>Open: {numeral(Open).format('$0,0.00')}</td>
             <td></td>
             <td></td>
           </tr>
         </tbody>
       </table>
+      <button onClick={() => props.getStock(Symbol)} className="btn btn-success">Refresh</button>
     </div>
   )
 }

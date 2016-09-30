@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import MarketStore from '../stores/MarketStore'
 import StockDisplay from './StockDisplay'
+import MarketActions from '../actions/MarketActions'
 
 export default class DetailedView extends Component {
   constructor() {
@@ -29,6 +30,10 @@ export default class DetailedView extends Component {
     console.log('state:', this.state);
   }
 
+  getStock(stock) {
+    MarketActions.stockQuote(stock);
+  }
+
   render() {
     let stock = '';
 
@@ -37,7 +42,7 @@ export default class DetailedView extends Component {
     }
 
     return (
-      <StockDisplay stock={stock}/>
+      <StockDisplay getStock={this.getStock} stock={stock}/>
     )
   }
 }

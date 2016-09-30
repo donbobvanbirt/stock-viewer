@@ -17,7 +17,7 @@ class MarketStore extends EventEmitter {
           break;
         case 'QUOTE':
           _stockQuote = action.payload.data;
-          console.log('_stockQuote', _stockQuote);
+          // console.log('_stockQuote', _stockQuote);
           this.emit('CHANGE');
           break;
       }
