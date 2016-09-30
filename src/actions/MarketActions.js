@@ -1,8 +1,12 @@
 import API from '../API'
 
 const MarketActions = {
-  stockSearch() {
-    API.stockSearch();
+  stockSearch(search) {
+    API.stockSearch(search);
+  },
+
+  stockQuote(stock) {
+    API.stockQuote(stock)
   }
 }
 

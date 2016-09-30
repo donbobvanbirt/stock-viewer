@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
 import MarketStore from '../stores/MarketStore'
-import ResultsList from './ResultsList'
+import StockDisplay from './StockDisplay'
 
-export default class StockResults extends Component {
+export default class DetailedView extends Component {
   constructor() {
     super();
 
     this.state = {
-      searchResults: MarketStore.getStock()
+      stock: MarketStore.getQuote()
     }
     this._onChange = this._onChange.bind(this);
     console.log('state:', this.state);
@@ -24,24 +24,20 @@ export default class StockResults extends Component {
 
   _onChange() {
     this.setState({
-      searchResults: MarketStore.getStock()
+      stock: MarketStore.getQuote()
     })
     console.log('state:', this.state);
   }
 
   render() {
-    let results = [];
+    let stock = '';
 
-    if (this.state.searchResults) {
-      results = this.state.searchResults;
+    if (this.state.stock) {
+      stock = this.state.stock;
     }
 
-
     return (
-      <div>
-        <ResultsList getStock={this.props.getStock} results={results} />
-      </div>
+      <StockDisplay stock={stock}/>
     )
   }
-
 }

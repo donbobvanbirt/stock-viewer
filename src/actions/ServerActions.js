@@ -7,6 +7,14 @@ const ServerActions = {
       payload: { stock }
     })
     // console.log('stock:', stock)
+  },
+
+  recieveQuote(data) {
+    AppDispatcher.dispatch({
+      type: 'QUOTE',
+      payload: { data }
+    })
+    console.log('data:', data)
   }
 }
 

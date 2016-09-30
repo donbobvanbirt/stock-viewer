@@ -13,9 +13,13 @@ export default class Info extends Component {
 
   getInfo(e) {
     e.preventDefault();
-    let stock = this.refs.searchBar.value;
+    let search = this.refs.searchBar.value;
     // console.log('info button clicked:', stock)
-    MarketActions.stockSearch();
+    MarketActions.stockSearch(search);
+  }
+
+  getStock(stock) {
+    MarketActions.stockQuote(stock);
   }
 
   componentWillMount() {
@@ -29,7 +33,7 @@ export default class Info extends Component {
           <input type="text" className="form-control" ref='searchBar' id='searchBar'/>
           <button onClick={this.getInfo} className="btn btn-default">Info</button>
         </form>
-        <StockResults/>
+        <StockResults getStock={this.getStock}/>
       </div>
     )
   }

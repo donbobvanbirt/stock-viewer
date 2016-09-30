@@ -1,7 +1,8 @@
 import { EventEmitter } from 'events'
 import AppDispatcher from '../AppDispatcher'
 
-let _stock = null;
+let _stockList = null;
+let _stockQuote = null;
 
 class MarketStore extends EventEmitter {
   constructor() {
@@ -10,12 +11,15 @@ class MarketStore extends EventEmitter {
     AppDispatcher.register(action => {
       switch (action.type) {
         case 'RECEIVE_STOCK':
-          _stock = action.payload.stock;
-          console.log('stock:', _stock);
+          _stockList = action.payload.stock;
+          // console.log('stock:', _stockList);
           this.emit('CHANGE');
           break;
-        default:
-
+        case 'QUOTE':
+          _stockQuote = action.payload.data;
+          console.log('_stockQuote', _stockQuote);
+          this.emit('CHANGE');
+          break;
       }
     })
   }
@@ -29,7 +33,11 @@ class MarketStore extends EventEmitter {
   }
 
   getStock() {
-    return _stock;
+    return _stockList;
+  }
+
+  getQuote() {
+    return _stockQuote
   }
 }
 

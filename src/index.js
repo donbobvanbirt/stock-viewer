@@ -5,13 +5,14 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import Layout from './components/Layout'
 import Home from './components/Home'
 import Info from './components/Info'
+import DetailedView from './components/DetailedView'
 
 render(
   <Router history={browserHistory}>
 
     <Route path='/' component={Layout}>
-      <IndexRoute component={Home}/>
-      <Route path="/info" component={Info}/>
+      <IndexRoute component={Info}/>
+      <Route path='/detailed-view' component={DetailedView} />
     </Route>
 
   </Router>,

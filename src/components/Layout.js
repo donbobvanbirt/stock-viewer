@@ -12,10 +12,7 @@ export default class Layout extends Component {
     return (
       <div className='container'>
         <h1 className='text-center'>Stock Viewer</h1>
-        <ul role="nav">
-          <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
-          <li><NavLink to="/info">Info</NavLink></li>
-        </ul>
+        <NavLink className="btn btn-default" to="/" onlyActiveOnIndex={true}>Search</NavLink>
         {this.props.children}
       </div>
     )
